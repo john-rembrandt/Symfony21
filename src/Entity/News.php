@@ -83,24 +83,24 @@ class News
         return $this;
     }
 
-    public function getDateAjout(): ?\DateTimeInterface
+    public function getDateAjout(): ?\DateTime
     {
         return $this->dateAjout;
     }
 
-    public function setDateAjout(\DateTimeInterface $dateAjout): self
+    public function setDateAjout(\DateTime $dateAjout): self
     {
         $this->dateAjout = $dateAjout;
 
         return $this;
     }
 
-    public function getDateModif(): ?\DateTimeInterface
+    public function getDateModif(): ?\DateTime
     {
         return $this->dateModif;
     }
 
-    public function setDateModif(\DateTimeInterface $dateModif): self
+    public function setDateModif(\DateTime $dateModif): self
     {
         $this->dateModif = $dateModif;
 
