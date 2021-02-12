@@ -5,3 +5,9 @@
 app_lucky_number:
     path: /lucky/number
     controller: App\Controller\LuckyController::number
+app_news_index:
+    path: /news
+    controller: App\Controller\NewsTestController::createNews
+app_news_show:
+    path: /show/{id}
+    controller: App\Controller\NewsTestController::show
