@@ -14,3 +14,9 @@ app_news_show:
 app_form_show:
     path: /formulaire
     controller: App\Controller\NewsTestController::formulaire
+app_form_Entry:
+    path: /entryFormulaire
+    controller:  App\Controller\NewsTestController::entryFormulaire
+app_form_Out:
+    path: /outFormulaire
+    controller: App\Controller\NewsTestController::outFormulaire
