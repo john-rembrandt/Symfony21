@@ -1,6 +1,7 @@
 <?php
 namespace App\Controller;
 
+use App\Form\Type\NewsType;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
@@ -48,5 +49,20 @@ class NewsTestController extends AbstractController
         // or render a template
         // in the template, print things with {{ product.name }}
         // return $this->render('product/show.html.twig', ['product' => $product]);
+    }
+    public function formulaire(): Response
+    {
+        // creates a task object and initializes some data for this example
+        $news = new News();
+        $news->setAuteur('Write a blog post');
+        $news->setTitre('tomorrow');
+        $news->setContenu('pis comment le formulaire');
+        $news->setDateAjout(new \DateTime('tomorrow'));
+        $news->setDateModif(new \DateTime('today'));
+
+        $form = $this->createForm(NewsType::class, $news);
+
+        return $this->render('news/formulaire.html.twig', [
+            'form' => $form->createView(),]);
     }
 }
