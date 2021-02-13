@@ -11,3 +11,6 @@ app_news_index:
 app_news_show:
     path: /show/{id}
     controller: App\Controller\NewsTestController::show
+app_form_show:
+    path: /formulaire
+    controller: App\Controller\NewsTestController::formulaire
