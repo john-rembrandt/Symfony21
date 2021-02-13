@@ -65,4 +65,34 @@ class NewsTestController extends AbstractController
         return $this->render('news/formulaire.html.twig', [
             'form' => $form->createView(),]);
     }
+    public function entryFormulaire(Request $request): Response
+    {
+        // just setup a fresh $task object (remove the example data)
+        $news = new News();
+
+        $form = $this->createForm(NewsType::class, $news);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            // $form->getData() holds the submitted values
+            // but, the original `$task` variable has also been updated
+            $news = $form->getData();
+
+            // ... perform some action, such as saving the task to the database
+            // for example, if Task is a Doctrine entity, save it!
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($news);
+            $entityManager->flush();
+
+            return $this->redirectToRoute('app_form_Out');
+        }
+    
+        return $this->render('news/formulaire.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
+    public function outFormulaire(): Response
+    {
+        return $this->render('news/outFormulaire.html.twig');
+    }
 }
