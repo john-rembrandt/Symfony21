@@ -11,6 +11,8 @@ use Symfony\Component\HttpFoundation\Request;//dans le but de remplacer le HTTPR
 
 class NewsTestController extends AbstractController //remplace NewsController.php
 {
+
+    
     public function createNews(): response
     {
          // you can fetch the EntityManager via $this->getDoctrine()
@@ -32,6 +34,11 @@ class NewsTestController extends AbstractController //remplace NewsController.ph
 
         return new Response('Saved new product with id '.$news->getId());
     }
+
+
+
+
+
     public function show(int $id): Response 
     {
        //affiche l'auteur d'une news en fonction de son id de la table "news" 
@@ -51,6 +58,11 @@ class NewsTestController extends AbstractController //remplace NewsController.ph
         // in the template, print things with {{ product.name }}
         // return $this->render('product/show.html.twig', ['product' => $product]);
     }
+
+
+
+
+
     public function formulaire(): Response //rentre en dur dans la db
     {
         // creates a task object and initializes some data for this example
@@ -66,10 +78,15 @@ class NewsTestController extends AbstractController //remplace NewsController.ph
         return $this->render('news/formulaire.html.twig', [
             'form' => $form->createView(),]);
     }
+
+
+
+
+
     public function entryFormulaire(Request $request): Response 
     {
         //crée et insère le fomulaire en db, table "news"
-        
+
         // just setup a fresh $task object (remove the example data)
         $news = new News();
 
@@ -94,6 +111,11 @@ class NewsTestController extends AbstractController //remplace NewsController.ph
             'form' => $form->createView(),
         ]);
     }
+
+
+
+
+
     public function outFormulaire(): Response //page de réponse si formulaire "ok"
     {
         return $this->render('news/outFormulaire.html.twig');
