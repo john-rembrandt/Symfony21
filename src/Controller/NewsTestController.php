@@ -9,7 +9,7 @@ use App\Entity\News;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;//dans le but de remplacer le BackController maison
 use Symfony\Component\HttpFoundation\Request;//dans le but de remplacer le HTTPRequest maison
 
-class NewsTestController extends AbstractController
+class NewsTestController extends AbstractController //remplace NewsController.php
 {
     public function createNews(): response
     {
@@ -32,8 +32,9 @@ class NewsTestController extends AbstractController
 
         return new Response('Saved new product with id '.$news->getId());
     }
-    public function show(int $id): Response
+    public function show(int $id): Response 
     {
+       //affiche l'auteur d'une news en fonction de son id de la table "news" 
         $news = $this->getDoctrine()
             ->getRepository(News::class)
             ->find($id);
@@ -50,7 +51,7 @@ class NewsTestController extends AbstractController
         // in the template, print things with {{ product.name }}
         // return $this->render('product/show.html.twig', ['product' => $product]);
     }
-    public function formulaire(): Response
+    public function formulaire(): Response //rentre en dur dans la db
     {
         // creates a task object and initializes some data for this example
         $news = new News();
@@ -65,8 +66,10 @@ class NewsTestController extends AbstractController
         return $this->render('news/formulaire.html.twig', [
             'form' => $form->createView(),]);
     }
-    public function entryFormulaire(Request $request): Response
+    public function entryFormulaire(Request $request): Response 
     {
+        //crée et insère le fomulaire en db, table "news"
+        
         // just setup a fresh $task object (remove the example data)
         $news = new News();
 
@@ -91,7 +94,7 @@ class NewsTestController extends AbstractController
             'form' => $form->createView(),
         ]);
     }
-    public function outFormulaire(): Response
+    public function outFormulaire(): Response //page de réponse si formulaire "ok"
     {
         return $this->render('news/outFormulaire.html.twig');
     }
