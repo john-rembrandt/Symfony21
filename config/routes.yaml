@@ -7,16 +7,16 @@ app_lucky_number:
     controller: App\Controller\LuckyController::number
 app_news_index:
     path: /news
-    controller: App\Controller\NewsTestController::createNews
+    controller: App\Controller\News\NewsController::createNews
 app_news_show:
     path: /show/{id}
-    controller: App\Controller\NewsTestController::show
+    controller: App\Controller\News\NewsController::show
 app_form_show:
     path: /formulaire
-    controller: App\Controller\NewsTestController::formulaire
+    controller: App\Controller\News\NewsController::formulaire
 app_form_Entry:
     path: /entryFormulaire
-    controller:  App\Controller\NewsTestController::entryFormulaire
+    controller:  App\Controller\News\NewsController::entryFormulaire
 app_form_Out:
     path: /outFormulaire
-    controller: App\Controller\NewsTestController::outFormulaire
+    controller: App\Controller\News\NewsController::outFormulaire
