@@ -1,5 +1,5 @@
 <?php
-namespace App\Controller;
+namespace App\Controller\News;
 
 use App\Form\Type\NewsType;
 use DateTime;
@@ -9,7 +9,7 @@ use App\Entity\News;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;//dans le but de remplacer le BackController maison
 use Symfony\Component\HttpFoundation\Request;//dans le but de remplacer le HTTPRequest maison
 
-class NewsTestController extends AbstractController //remplace NewsController.php
+class NewsController extends AbstractController //remplace NewsController.php
 {
 
     
