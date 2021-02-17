@@ -20,3 +20,18 @@ app_form_Entry:
 app_form_Out:
     path: /outFormulaire
     controller: App\Controller\News\NewsController::outFormulaire
+app_comments_index:
+    path: /comments
+    controller: App\Controller\Comments\CommentsController::createNews
+app_comments_show:
+    path: /show/{id}
+    controller: App\Controller\Comments\CommentsController::show
+app_formComments_show:
+    path: /formulaire
+    controller: App\Controller\Comments\CommentsController::formulaire
+app_formComments_Entry:
+    path: /entryFormulaire
+    controller:  App\Controller\Comments\CommentsController::entryFormulaire
+app_formComments_Out:
+    path: /outFormulaire
+    controller: App\Controller\Comments\CommentsController::outFormulaire
