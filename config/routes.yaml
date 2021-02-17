@@ -9,7 +9,7 @@ app_news_index:
     path: /news
     controller: App\Controller\News\NewsController::createNews
 app_news_show:
-    path: /showNews/{id}
+    path: /showNews/{id} 
     controller: App\Controller\News\NewsController::show
 app_form_show:
     path: /formulaireNews
