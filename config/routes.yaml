@@ -9,29 +9,29 @@ app_news_index:
     path: /news
     controller: App\Controller\News\NewsController::createNews
 app_news_show:
-    path: /show/{id}
+    path: /showNews/{id}
     controller: App\Controller\News\NewsController::show
 app_form_show:
-    path: /formulaire
+    path: /formulaireNews
     controller: App\Controller\News\NewsController::formulaire
 app_form_Entry:
-    path: /entryFormulaire
+    path: /entryFormulaireNews
     controller:  App\Controller\News\NewsController::entryFormulaire
 app_form_Out:
-    path: /outFormulaire
+    path: /outFormulaireNews
     controller: App\Controller\News\NewsController::outFormulaire
 app_comments_index:
     path: /comments
     controller: App\Controller\Comments\CommentsController::createNews
 app_comments_show:
-    path: /show/{id}
+    path: /showComments/{id}
     controller: App\Controller\Comments\CommentsController::show
 app_formComments_show:
-    path: /formulaire
+    path: /formulaireComments
     controller: App\Controller\Comments\CommentsController::formulaire
 app_formComments_Entry:
-    path: /entryFormulaire
+    path: /entryFormulaireComments
     controller:  App\Controller\Comments\CommentsController::entryFormulaire
 app_formComments_Out:
-    path: /outFormulaire
+    path: /outFormulaireComments
     controller: App\Controller\Comments\CommentsController::outFormulaire
