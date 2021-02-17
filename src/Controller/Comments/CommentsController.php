@@ -31,7 +31,7 @@ class CommentsController extends AbstractController
         // actually executes the queries (i.e. the INSERT query)
         $entityManager->flush();
 
-        return new Response('Saved new product with id '.$comments->getId());
+        return new Response('Saved new comments with id '.$comments->getId());
     }
 
 
@@ -47,7 +47,7 @@ class CommentsController extends AbstractController
 
         if (!$comments) {
             throw $this->createNotFoundException(
-                'No news found for id '.$id
+                'No comments found for id '.$id
             );
         }
 
@@ -70,7 +70,7 @@ class CommentsController extends AbstractController
         $news->setContenu('pis comment le formulaire');
         $news->setDate(new \DateTime('tomorrow'));
 
-        $form = $this->createForm(NewsType::class, $comments);
+        $form = $this->createForm(CommentsType::class, $comments);
 
         return $this->render('comments/formulaire.html.twig', [
             'form' => $form->createView(),]);
