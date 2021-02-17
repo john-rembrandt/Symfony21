@@ -17,4 +17,7 @@ commencé début février 2021.
 12: ajouter une fonction de fin de formulaire qui redirige sur une page "success"
 13: ajouter un template pour le formulaire
 14: ajouter un README.txt pour suivre mes manip
-15:
+
+le 17.02.21
+
+1:creer routes, controller, entity et templates sur les comments
