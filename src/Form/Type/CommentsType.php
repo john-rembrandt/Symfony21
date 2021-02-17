@@ -15,7 +15,7 @@ class CommentsType extends AbstractType
             ->add('auteur', TextType::class)
             ->add('contenu', TextType::class)
             ->add('date', DateType::class)
-            
+            ->add('soumettre', SubmitType::class)
         ;
     }
 }

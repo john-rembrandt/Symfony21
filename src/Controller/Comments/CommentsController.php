@@ -65,14 +65,14 @@ class CommentsController extends AbstractController
     public function formulaire(): Response 
     {
         // creates a task object and initializes some data for this example
-        $news = new Comments();
-        $news->setAuteur('Write a blog post');
-        $news->setContenu('pis comment le formulaire');
-        $news->setDate(new \DateTime('tomorrow'));
+        $comments = new Comments();
+        $comments->setAuteur('Write a blog post');
+        $comments->setContenu('pis comment le formulaire');
+        $comments->setDate(new \DateTime('tomorrow'));
 
         $form = $this->createForm(CommentsType::class, $comments);
 
-        return $this->render('comments/formulaire.html.twig', [
+        return $this->render('Comments/formulaire.html.twig', [
             'form' => $form->createView(),]);
     }
 
@@ -101,10 +101,10 @@ class CommentsController extends AbstractController
             $entityManager->persist($comments);
             $entityManager->flush();
 
-            return $this->redirectToRoute('app_form_Out');
+            return $this->redirectToRoute('app_formComments_Out');
         }
     
-        return $this->render('comments/formulaire.html.twig', [
+        return $this->render('Comments/formulaire.html.twig', [
             'form' => $form->createView(),
         ]);
     }
@@ -115,6 +115,6 @@ class CommentsController extends AbstractController
     //page de réponse si formulaire commentaire "ok"
     public function outFormulaire(): Response 
     {
-        return $this->render('comments/outFormulaire.html.twig');
+        return $this->render('News/outFormulaire.html.twig');
     }
 }

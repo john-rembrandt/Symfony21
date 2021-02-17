@@ -22,7 +22,7 @@ app_form_Out:
     controller: App\Controller\News\NewsController::outFormulaire
 app_comments_index:
     path: /comments
-    controller: App\Controller\Comments\CommentsController::createNews
+    controller: App\Controller\Comments\CommentsController::createComments
 app_comments_show:
     path: /showComments/{id}
     controller: App\Controller\Comments\CommentsController::show
