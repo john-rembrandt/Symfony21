@@ -17,6 +17,9 @@ commencé début février 2021.
 12: ajouter une fonction de fin de formulaire qui redirige sur une page "success"
 13: ajouter un template pour le formulaire
 14: ajouter un README.txt pour suivre mes manip
+15: installer PHPUnit avec composer
+16: créer un dossier /Util et un fichier calculator pour tester si PHPUnit et ok
+17: fait un test de couverture, resultat en html dans dossier /public
 
 le 17.02.21
 
