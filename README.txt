@@ -26,3 +26,5 @@ le 17.02.21
 1: creer routes, controller, entity et templates sur les comments
 2: ajout de contraintes de validation dans les entity avec les annotations
 3: ajouté un use validator a l'entity news et les annotations
+4: ajout de webPack bundle avec yarn comme conseillé sur la doc symfony
+5: le fait d utiliser symfony flex a creer le dossier assets et les fichier de config
