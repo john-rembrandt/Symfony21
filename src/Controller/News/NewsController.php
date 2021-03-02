@@ -8,11 +8,21 @@ use Symfony\Component\HttpFoundation\Response;
 use App\Entity\News;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;//dans le but de remplacer le BackController maison
 use Symfony\Component\HttpFoundation\Request;//dans le but de remplacer le HTTPRequest maison
+use Symfony\Component\HttpFoundation\Session\SessionInterface;//pour tester les sessions
 
 class NewsController extends AbstractController //remplace NewsController.php
 {
-
     
+    private $session;
+
+    public function __construct(SessionInterface $session)
+    {
+        $this->session = $session;
+    }
+    
+
+
+
     public function createNews(): response
     {
          // you can fetch the EntityManager via $this->getDoctrine()
@@ -85,6 +95,7 @@ class NewsController extends AbstractController //remplace NewsController.php
 
     public function entryFormulaire(Request $request): Response 
     {
+        $this->session->set('attribute-name', 'attribute-value');
         //crée et insère le fomulaire en db, table "news"
 
         // just setup a fresh $task object (remove the example data)
