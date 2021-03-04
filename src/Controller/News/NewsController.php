@@ -5,6 +5,7 @@ use App\Form\Type\NewsType;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Render;
 use App\Entity\News;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;//dans le but de remplacer le BackController maison
 use Symfony\Component\HttpFoundation\Request;//dans le but de remplacer le HTTPRequest maison
@@ -46,23 +47,45 @@ class NewsController extends AbstractController //remplace NewsController.php
     }
 
 
+    public function showUnique(int $id): Response
+    {
+       //affiche l'auteur d'une news en fonction de son id de la table "news" 
+       $news = $this->getDoctrine()
+       ->getRepository(News::class)
+       ->find($id);
+
+   if (!$news) {
+       throw $this->createNotFoundException(
+           'No news found for id '.$id
+       );
+   }
+
+   return new Response('Check out this great product: '.$news->getAuteur());
+
+   // or render a template
+   // in the template, print things with {{ product.name }}
+   // return $this->render('News/affichage.html.twig', ['news' => $news]); 
+    }
 
 
-
-    public function show(int $id): Response 
+    public function showAll(): Response 
     {
        //affiche l'auteur d'une news en fonction de son id de la table "news" 
         $news = $this->getDoctrine()
             ->getRepository(News::class)
-            ->find($id);
+            ->findAll();
 
         if (!$news) {
             throw $this->createNotFoundException(
-                'No news found for id '.$id
+                'No news'
             );
         }
+        foreach($news as $new => $auteur)
+        {
+            $auteur;
+        }
 
-        return new Response('Check out this great product: '.$news->getAuteur());
+        return new Render('Check out this great author: ' .$auteur );
 
         // or render a template
         // in the template, print things with {{ product.name }}
@@ -96,6 +119,7 @@ class NewsController extends AbstractController //remplace NewsController.php
     public function entryFormulaire(Request $request): Response 
     {
         $this->session->set('attribute-name', 'attribute-value');
+        setcookie('pseudo', 'M@teo21', time() + 365*24*3600, null, null, false, true);
         //crée et insère le fomulaire en db, table "news"
 
         // just setup a fresh $task object (remove the example data)

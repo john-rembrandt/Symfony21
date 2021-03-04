@@ -8,9 +8,12 @@ app_lucky_number:
 app_news_index:
     path: /news
     controller: App\Controller\News\NewsController::createNews
-app_news_show:
-    path: /showNews/{id} 
-    controller: App\Controller\News\NewsController::show
+app_news_showUnique:
+    path: /showNewsUnique/{id} 
+    controller: App\Controller\News\NewsController::showUnique
+app_news_showAll:
+    path: /showNewsAll
+    controller: App\Controller\News\NewsController::showAll
 app_form_show:
     path: /formulaireNews
     controller: App\Controller\News\NewsController::formulaire
