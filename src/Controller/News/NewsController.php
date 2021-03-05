@@ -5,7 +5,7 @@ use App\Form\Type\NewsType;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\Render;
+
 use App\Entity\News;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;//dans le but de remplacer le BackController maison
 use Symfony\Component\HttpFoundation\Request;//dans le but de remplacer le HTTPRequest maison
@@ -68,9 +68,9 @@ class NewsController extends AbstractController //remplace NewsController.php
     }
 
 
-    public function showAll(): Response 
+    public function showAll(): Response
     {
-       //affiche l'auteur d'une news en fonction de son id de la table "news" 
+        
         $news = $this->getDoctrine()
             ->getRepository(News::class)
             ->findAll();
@@ -80,12 +80,24 @@ class NewsController extends AbstractController //remplace NewsController.php
                 'No news'
             );
         }
-        foreach($news as $new => $auteur)
-        {
-            $auteur;
+       
+        var_dump($news);
+        
+        foreach($news as $new)
+        {   
+            $new;
+            $newNews;
+            $newNews = $new;
+            foreach($newNews as $newNew)
+            {
+                $newNew->getAuteur();
+                //return new Response('News/affichage.html.twig' .$newNew->getAuteur());
+            }
+            return new Response('News/affichage.html.twig' .$newNew->getAuteur());
         }
-
-        return new Render('Check out this great author: ' .$auteur );
+        
+        //return new Response('News/affichage.html.twig' .$news->getAuteur());
+        
 
         // or render a template
         // in the template, print things with {{ product.name }}
