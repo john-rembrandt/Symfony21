@@ -16,7 +16,13 @@
     <body>
         {% block body %}
         <p>page de test d'affichage des news</p>
-        {{ news.auteur }}
+        <h1>Members</h1>
+        <ul>
+            {% for new in news %}
+                <li>{{ new.auteur|e }}</li>
+            {% endfor %}
+        </ul>
+        {#{ news.auteur }}#}
         {% endblock %}
     </body>
 </html>

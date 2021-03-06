@@ -13,14 +13,14 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;//pour tester les 
 
 class NewsController extends AbstractController //remplace NewsController.php
 {
-    
+    /*
     private $session;
 
     public function __construct(SessionInterface $session)
     {
         $this->session = $session;
     }
-    
+    */
 
 
 
@@ -81,21 +81,23 @@ class NewsController extends AbstractController //remplace NewsController.php
             );
         }
        
-        var_dump($news);
-        
+        //var_dump($news);
+        return $this->render('News/affichage.html.twig', ['news'=> $news]);
+        /*
         foreach($news as $new)
         {   
+            $auteur;
             $new;
             $newNews;
             $newNews = $new;
             foreach($newNews as $newNew)
             {
-                $newNew->getAuteur();
+                $newNew = $auteur;
                 //return new Response('News/affichage.html.twig' .$newNew->getAuteur());
             }
-            return new Response('News/affichage.html.twig' .$newNew->getAuteur());
+            return new Response('News/affichage.html.twig' .$auteur->getAuteur());
         }
-        
+        */
         //return new Response('News/affichage.html.twig' .$news->getAuteur());
         
 
