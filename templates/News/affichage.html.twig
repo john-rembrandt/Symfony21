@@ -18,8 +18,8 @@
         <p>page de test d'affichage des news</p>
         <h1>Members</h1>
         <ul>
-            {% for new in news %}
-                <li>{{ new.auteur|e }}</li>
+            {% for news in news %}
+                <li>{{ news }}</li>
             {% endfor %}
         </ul>
         {#{ news.auteur }}#}
