@@ -80,9 +80,8 @@ class NewsController extends AbstractController //remplace NewsController.php
                 'No news'
             );
         }
-       
-        //var_dump($news);
-        return $this->render('News/affichage.html.twig', ['news'=> $news]);
+        
+        return $this->render('News/affichage.html.twig', ['news' => $news]);
         /*
         foreach($news as $new)
         {   
@@ -132,7 +131,7 @@ class NewsController extends AbstractController //remplace NewsController.php
 
     public function entryFormulaire(Request $request): Response 
     {
-        $this->session->set('attribute-name', 'attribute-value');
+        //$this->session->set('attribute-name', 'attribute-value');
         setcookie('pseudo', 'M@teo21', time() + 365*24*3600, null, null, false, true);
         //crée et insère le fomulaire en db, table "news"
 
